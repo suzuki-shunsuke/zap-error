@@ -8,7 +8,7 @@ import (
 	"go.uber.org/zap"
 )
 
-func Test_logError_Error(t *testing.T) { //nolint:funlen
+func Test_logError_Error(t *testing.T) {
 	t.Parallel()
 	data := []struct {
 		name string
@@ -86,7 +86,7 @@ func Test_logError_Unwrap(t *testing.T) {
 	}
 }
 
-func Test_logError_Fields(t *testing.T) {
+func Test_logError_Fields(t *testing.T) { //nolint:funlen
 	t.Parallel()
 	data := []struct {
 		name string
