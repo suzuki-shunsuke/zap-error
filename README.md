@@ -1,5 +1,7 @@
 # zap-error
 
+[![Go Reference](https://pkg.go.dev/badge/github.com/suzuki-shunsuke/zap-error.svg)](https://pkg.go.dev/github.com/suzuki-shunsuke/zap-error)
+
 Embed [zap](https://github.com/uber-go/zap).Field into error.
 
 This is a Go's small library to embed [zap](https://github.com/uber-go/zap)'s Fields into error.
