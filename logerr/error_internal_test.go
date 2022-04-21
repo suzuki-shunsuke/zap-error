@@ -19,10 +19,6 @@ func Test_logError_Error(t *testing.T) {
 			name: "nil",
 		},
 		{
-			name: "empty",
-			err:  &logError{},
-		},
-		{
 			name: "no fields",
 			err: &logError{
 				err: errors.New("foo"),
@@ -63,10 +59,6 @@ func Test_logError_Unwrap(t *testing.T) {
 			name: "nil",
 		},
 		{
-			name: "empty",
-			err:  &logError{},
-		},
-		{
 			name: "normal",
 			err: &logError{
 				err: errors.New("foo"),
@@ -97,13 +89,12 @@ func Test_logError_Fields(t *testing.T) { //nolint:funlen
 			name: "nil",
 		},
 		{
-			name: "empty",
-			err:  &logError{},
-		},
-		{
 			name: "normal",
 			err: &logError{
 				err: errors.New("foo"),
+			},
+			exp: []zap.Field{
+				zap.Error(errors.New("foo")),
 			},
 		},
 		{
@@ -115,6 +106,7 @@ func Test_logError_Fields(t *testing.T) { //nolint:funlen
 				},
 			},
 			exp: []zap.Field{
+				zap.Error(errors.New("foo")),
 				zap.String("name", "foo"),
 			},
 		},
@@ -129,6 +121,7 @@ func Test_logError_Fields(t *testing.T) { //nolint:funlen
 				},
 			},
 			exp: []zap.Field{
+				zap.Error(errors.New("foo")),
 				zap.String("name", "foo"),
 			},
 		},
@@ -146,6 +139,7 @@ func Test_logError_Fields(t *testing.T) { //nolint:funlen
 				},
 			},
 			exp: []zap.Field{
+				zap.Error(errors.New("foo")),
 				zap.String("name", "foo"),
 				zap.String("id", "yoo"),
 			},
