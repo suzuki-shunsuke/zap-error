@@ -1,6 +1,7 @@
 {
   "extends": [
-    "config:base"
+    "config:base",
+    "github>aquaproj/aqua-renovate-config#0.1.9",
   ],
   "automerge": true,
   "packageRules": [
