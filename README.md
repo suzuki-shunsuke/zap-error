@@ -35,7 +35,7 @@ If you use zap, you may want to add structured data to error.
 Mainly zap-error provides only two simple API.
 
 * [WithFields](https://pkg.go.dev/github.com/suzuki-shunsuke/zap-error/logerr#WithFields): Add structured data to error
-* [ExpandError](https://pkg.go.dev/github.com/suzuki-shunsuke/zap-error/logerr#ExpandError): Get structured data from error and return []zap.Field
+* [ToFields](https://pkg.go.dev/github.com/suzuki-shunsuke/zap-error/logerr#ToFields): Get structured data from error and return []zap.Field
 
 AS IS (without zap-error)
 
@@ -54,7 +54,7 @@ return logerr.WithFields(fmt.Errorf("get a user: %w", err), zap.String("username
 ```
 
 ```go
-logger.Error("add a member to a group", logerr.ExpandError(err)...)
+logger.Error("add a member to a group", logerr.ToFields(err)...)
 ```
 
 Using zap-error, you can add structured data to error as context. You don't have to construct a string with [fmt's format](https://pkg.go.dev/fmt#hdr-Printing).
