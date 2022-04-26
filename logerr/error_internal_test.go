@@ -93,9 +93,7 @@ func Test_logError_Fields(t *testing.T) { //nolint:funlen
 			err: &logError{
 				err: errors.New("foo"),
 			},
-			exp: []zap.Field{
-				zap.Error(errors.New("foo")),
-			},
+			exp: nil,
 		},
 		{
 			name: "normal 2",
@@ -106,7 +104,6 @@ func Test_logError_Fields(t *testing.T) { //nolint:funlen
 				},
 			},
 			exp: []zap.Field{
-				zap.Error(errors.New("foo")),
 				zap.String("name", "foo"),
 			},
 		},
@@ -121,7 +118,6 @@ func Test_logError_Fields(t *testing.T) { //nolint:funlen
 				},
 			},
 			exp: []zap.Field{
-				zap.Error(errors.New("foo")),
 				zap.String("name", "foo"),
 			},
 		},
@@ -139,7 +135,6 @@ func Test_logError_Fields(t *testing.T) { //nolint:funlen
 				},
 			},
 			exp: []zap.Field{
-				zap.Error(errors.New("foo")),
 				zap.String("name", "foo"),
 				zap.String("id", "yoo"),
 			},
