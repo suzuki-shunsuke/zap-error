@@ -27,5 +27,5 @@ func (e *logError) Fields() []zap.Field {
 	if e == nil {
 		return nil
 	}
-	return append(ToFields(e.err), e.fields...)
+	return append(toFields(e.err), e.fields...)
 }

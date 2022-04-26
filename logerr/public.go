@@ -24,7 +24,18 @@ func ToFields(err error) []zap.Field {
 	}
 	var e *logError
 	if errors.As(err, &e) {
-		return e.Fields()
+		return append(e.Fields(), zap.Error(err))
 	}
 	return []zap.Field{zap.Error(err)}
+}
+
+func toFields(err error) []zap.Field {
+	if err == nil {
+		return nil
+	}
+	var e *logError
+	if errors.As(err, &e) {
+		return e.Fields()
+	}
+	return nil
 }
