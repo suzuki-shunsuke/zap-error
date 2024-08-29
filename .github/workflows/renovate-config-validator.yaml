@@ -20,4 +20,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4
-    - uses: suzuki-shunsuke/github-action-renovate-config-validator@b54483862375f51910a60c4f498e927d4f3df466 # v1.0.1
+    - uses: suzuki-shunsuke/github-action-renovate-config-validator@36a15b83e37bf3221dc9c02ff5ffdaefb51ca1cf # v1.1.0
